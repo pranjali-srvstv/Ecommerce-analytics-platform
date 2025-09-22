@@ -79,7 +79,8 @@ ecommerce\_project/
 
 !\[Dashboard](data/ecommerce\_dashboard.png)
 
-
+\## 🎯 Quick Demo
+**[View Beautiful Dashboard](beautiful_dashboard.html)** - Opens instantly in any browser!
 
 \## 👨‍💻 Skills Demonstrated
 
