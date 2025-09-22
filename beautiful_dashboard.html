@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sales Insights Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link crossorigin="" rel="preconnect" href="https://fonts.gstatic.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#6366f1", // Lighter, more vibrant primary for dark mode
+            "background-light": "#0f172a", // Deepest dark background
+            "background-dark": "#1e293b", // Slightly lighter dark background for cards
+            "card-gradient-start": "#1e293b",
+            "card-gradient-end": "#0f172a",
+            "text-muted": "#94a3b8", // Lighter gray for secondary text
+            "border-color": "#334155", // Subtle border color
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          boxShadow: {
+            'lg-dark': '0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2)',
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-display bg-background-light text-white">
+<div class="flex flex-col min-h-screen">
+<header class="bg-gradient-to-b from-background-dark to-background-light/70 border-b border-border-color shadow-sm sticky top-0 z-10">
+<div class="container mx-auto px-6 py-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="text-primary size-8">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-white">Sales Insights</h1>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="#">Reports</a>
+<a class="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="#">Customers</a>
+<a class="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="#">Products</a>
+<a class="text-sm font-medium text-gray-300 hover:text-primary transition-colors" href="#">Marketing</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full text-gray-300 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDI6TcotRhvym88_5g5LIyi_vxdNRfXp5uXbhZoFBVxozRIYBL8NjNrT9QDnFdxis-B4OUup-mxPTe-fBjHS5DdkANu2nJ-yC3sFRavG3Va2aTn0sOX4D00dQUqsrMkGkrvDNAmwh_frwFV014qiNaLv5ofodsHYEWkwyxivIxQkvksX0v5WbPsZzIcGcarX-pwkdlWVJBcBr7T7ObkXuJymEwCWgWvgaoNAL0tUHDGEbiuxjKxvXjpjLSO207XKmzmLKVs8BQlpyTW");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 container mx-auto px-6 py-8">
+<div class="mb-8">
+<h2 class="text-3xl font-bold text-white">Dashboard</h2>
+<p class="text-text-muted mt-1">Overview of your e-commerce performance</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-background-dark rounded-lg p-6 shadow-lg-dark">
+<p class="text-sm font-medium text-text-muted">Total Revenue</p>
+<p class="text-3xl font-bold text-white mt-2" data-metric="revenue">$1,156,593.74</p>
+<p class="text-sm font-medium text-green-400 mt-1">+12%</p>
+</div>
+<div class="bg-background-dark rounded-lg p-6 shadow-lg-dark">
+<p class="text-sm font-medium text-text-muted">Orders</p>
+<p class="text-3xl font-bold text-white mt-2" data-metric="orders">2,000.0</p>
+<p class="text-sm font-medium text-green-400 mt-1">+8%</p>
+</div>
+<div class="bg-background-dark rounded-lg p-6 shadow-lg-dark">
+<p class="text-sm font-medium text-text-muted">Conversion Rate</p>
+<p class="text-3xl font-bold text-white mt-2">3.5%</p>
+<p class="text-sm font-medium text-red-400 mt-1">-2%</p>
+</div>
+<div class="bg-background-dark rounded-lg p-6 shadow-lg-dark">
+<p class="text-sm font-medium text-text-muted">Average Order Value</p>
+<p class="text-3xl font-bold text-white mt-2" data-metric="aov">$578.30</p>
+<p class="text-sm font-medium text-green-400 mt-1">+5%</p>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-white mb-6">Performance Overview</h3>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+<div class="bg-gradient-to-br from-card-gradient-start to-card-gradient-end rounded-lg p-6 shadow-lg-dark">
+<p class="text-base font-medium text-white">Revenue Over Time</p>
+<p class="text-3xl font-bold text-white truncate mt-1">$1,156,593.74</p>
+<div class="flex items-center gap-2 text-sm">
+<p class="text-text-muted">Last 30 Days</p>
+<p class="text-green-400 font-medium">+12%</p>
+</div>
+<div class="mt-4 h-48">
+<svg fill="none" height="100.0%" preserveAspectRatio="none" viewBox="0 0 472 150" width="100.0%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#93c5fd" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#paint0_linear_revenue)"></path>
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_revenue" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#93c5fd" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#93c5fd" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+</svg>
+</div>
+</div>
+<div class="bg-background-dark rounded-lg p-6 shadow-lg-dark">
+<p class="text-base font-medium text-white">Orders by Product Category</p>
+<p class="text-3xl font-bold text-white truncate mt-1">2,000.0</p>
+<div class="flex items-center gap-2 text-sm">
+<p class="text-text-muted">Last 30 Days</p>
+<p class="text-green-400 font-medium">+8%</p>
+</div>
+<div class="grid grid-cols-5 gap-4 items-end justify-items-center mt-4 h-48">
+<div class="w-full flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded" style="height: 90%;"></div>
+<p class="text-xs text-text-muted">Clothing</p>
+</div>
+<div class="w-full flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded" style="height: 10%;"></div>
+<p class="text-xs text-text-muted">Electronics</p>
+</div>
+<div class="w-full flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded" style="height: 20%;"></div>
+<p class="text-xs text-text-muted">Home</p>
+</div>
+<div class="w-full flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded" style="height: 10%;"></div>
+<p class="text-xs text-text-muted">Books</p>
+</div>
+<div class="w-full flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded" style="height: 70%;"></div>
+<p class="text-xs text-text-muted">Other</p>
+</div>
+</div>
+</div>
+<div class="bg-background-dark rounded-lg p-6 shadow-lg-dark">
+<p class="text-base font-medium text-white">Top Selling Products</p>
+<p class="text-3xl font-bold text-white truncate mt-1">$120,000</p>
+<div class="flex items-center gap-2 text-sm">
+<p class="text-text-muted">Last 30 Days</p>
+<p class="text-green-400 font-medium">+15%</p>
+</div>
+<div class="space-y-4 mt-4">
+<div class="grid grid-cols-[auto_1fr] items-center gap-4">
+<p class="text-sm text-text-muted">Product A</p>
+<div class="w-full bg-primary/20 rounded-full h-2.5"><div class="bg-primary h-2.5 rounded-full" style="width: 70%"></div></div>
+</div>
+<div class="grid grid-cols-[auto_1fr] items-center gap-4">
+<p class="text-sm text-text-muted">Product B</p>
+<div class="w-full bg-primary/20 rounded-full h-2.5"><div class="bg-primary h-2.5 rounded-full" style="width: 50%"></div></div>
+</div>
+<div class="grid grid-cols-[auto_1fr] items-center gap-4">
+<p class="text-sm text-text-muted">Product C</p>
+<div class="w-full bg-primary/20 rounded-full h-2.5"><div class="bg-primary h-2.5 rounded-full" style="width: 80%"></div></div>
+</div>
+<div class="grid grid-cols-[auto_1fr] items-center gap-4">
+<p class="text-sm text-text-muted">Product D</p>
+<div class="w-full bg-primary/20 rounded-full h-2.5"><div class="bg-primary h-2.5 rounded-full" style="width: 40%"></div></div>
+</div>
+<div class="grid grid-cols-[auto_1fr] items-center gap-4">
+<p class="text-sm text-text-muted">Product E</p>
+<div class="w-full bg-primary/20 rounded-full h-2.5"><div class="bg-primary h-2.5 rounded-full" style="width: 80%"></div></div>
+</div>
+</div>
+</div>
+<div class="bg-background-dark rounded-lg p-6 shadow-lg-dark">
+<p class="text-base font-medium text-white">Customer Acquisition Cost</p>
+<p class="text-3xl font-bold text-white truncate mt-1">$50</p>
+<div class="flex items-center gap-2 text-sm">
+<p class="text-text-muted">Last 30 Days</p>
+<p class="text-red-400 font-medium">-5%</p>
+</div>
+<div class="mt-4 h-48">
+<svg fill="none" height="100.0%" preserveAspectRatio="none" viewBox="0 0 472 150" width="100.0%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#f87171" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#paint0_linear_cac)"></path>
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_cac" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#f87171" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#f87171" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-white mb-6">Sales Data</h3>
+<div class="bg-background-dark rounded-lg shadow-lg-dark overflow-x-auto">
+<table class="w-full text-sm text-left text-text-muted">
+<thead class="text-xs uppercase bg-background-light/30">
+<tr>
+<th class="px-6 py-3" scope="col">Order ID</th>
+<th class="px-6 py-3" scope="col">Customer</th>
+<th class="px-6 py-3" scope="col">Date</th>
+<th class="px-6 py-3" scope="col">Total</th>
+<th class="px-6 py-3 text-center" scope="col">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-background-dark/50 border-b border-border-color">
+<th class="px-6 py-4 font-medium text-white whitespace-nowrap" scope="row">#12345</th>
+<td class="px-6 py-4">Sophia Clark</td>
+<td class="px-6 py-4">2024-07-15</td>
+<td class="px-6 py-4">$150</td>
+<td class="px-6 py-4 text-center"><span class="px-2 py-1 text-xs font-medium rounded-full bg-blue-900 text-blue-300">Shipped</span></td>
+</tr>
+<tr class="bg-background-dark/50 border-b border-border-color">
+<th class="px-6 py-4 font-medium text-white whitespace-nowrap" scope="row">#12346</th>
+<td class="px-6 py-4">Ethan Carter</td>
+<td class="px-6 py-4">2024-07-16</td>
+<td class="px-6 py-4">$200</td>
+<td class="px-6 py-4 text-center"><span class="px-2 py-1 text-xs font-medium rounded-full bg-green-900 text-green-300">Delivered</span></td>
+</tr>
+<tr class="bg-background-dark/50 border-b border-border-color">
+<th class="px-6 py-4 font-medium text-white whitespace-nowrap" scope="row">#12347</th>
+<td class="px-6 py-4">Olivia Bennett</td>
+<td class="px-6 py-4">2024-07-17</td>
+<td class="px-6 py-4">$75</td>
+<td class="px-6 py-4 text-center"><span class="px-2 py-1 text-xs font-medium rounded-full bg-yellow-900 text-yellow-300">Pending</span></td>
+</tr>
+<tr class="bg-background-dark/50 border-b border-border-color">
+<th class="px-6 py-4 font-medium text-white whitespace-nowrap" scope="row">#12348</th>
+<td class="px-6 py-4">Liam Foster</td>
+<td class="px-6 py-4">2024-07-18</td>
+<td class="px-6 py-4">$300</td>
+<td class="px-6 py-4 text-center"><span class="px-2 py-1 text-xs font-medium rounded-full bg-blue-900 text-blue-300">Shipped</span></td>
+</tr>
+<tr class="bg-background-dark/50">
+<th class="px-6 py-4 font-medium text-white whitespace-nowrap" scope="row">#12349</th>
+<td class="px-6 py-4">Ava Harper</td>
+<td class="px-6 py-4">2024-07-19</td>
+<td class="px-6 py-4">$100.0</td>
+<td class="px-6 py-4 text-center"><span class="px-2 py-1 text-xs font-medium rounded-full bg-green-900 text-green-300">Delivered</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="text-2xl font-bold text-white mt-10 mb-6">Insights &amp; Recommendations</h3>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="bg-background-dark rounded-lg shadow-lg-dark p-6 flex flex-col md:flex-row items-center gap-6">
+<div class="flex-1">
+<p class="text-xs font-semibold uppercase text-primary">Insight</p>
+<p class="text-lg font-bold text-white mt-2">Increase in Mobile Orders</p>
+<p class="text-sm text-text-muted mt-1">Mobile orders have increased by 20% in the last month. Consider optimizing your mobile site for better conversion.</p>
+</div>
+<div class="w-full md:w-1/3 h-40 md:h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZFWJRHqG1NU2Tlj4sAkogKNuYzqXDLTpNevOgXwkCpkdkV3PaEcmntAifuXOWWAmCQXBu7Ir-KJxScMZSsO9l5wy2ho6i9VcLKBCSozJxsmG6E-CDkb68WWVWZRMkNGm9oUyc7aBEK7bVV0tbM-II-YDrHcolMAnK_sdowbOwNyx4GmoLGYPiAS-7bDAIj4IgC90G-JZWm2XNufjEyu73ix7n88qlRwQ700UC9yPEAtbtLL589RrEwX9WLEg8D6SvI8yZEKZzP22X");'></div>
+</div>
+<div class="bg-background-dark rounded-lg shadow-lg-dark p-6 flex flex-col md:flex-row items-center gap-6">
+<div class="flex-1">
+<p class="text-xs font-semibold uppercase text-primary">Recommendation</p>
+<p class="text-lg font-bold text-white mt-2">Promote Top Selling Products</p>
+<p class="text-sm text-text-muted mt-1">Product A is your top seller. Run targeted promotions to capitalize on its popularity and drive more sales.</p>
+</div>
+<div class="w-full md:w-1/3 h-40 md:h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_2zbmKMnkpnsj9e5VDA-WWyHmxUTv5zft_rk2qb5jvsZBsFkYruRhWAzx5eir9PBC-pp3XNOZWb8raMxplHITcdlr6tIIQyrq9m6EpJYpv3nL4BZ5awmEdXeygQAl90v8TkK4YXW_yCBiekdVqW0OCtszCVPUnWevB6mt5ejz8jW8Q2FWK0syRNJuoOdFBN_52xkUD68vMES_moV0tgTtNYyfc4NMnoJzxE3gTgoitKfmKTYQ_dqa_C20vpBxLqx7PGDyesV2ucG5");'></div>
+</div>
+</div>
+</main>
+</div>
+</body>
+</html>
