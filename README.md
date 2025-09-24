@@ -1,5 +1,4 @@
-** E-commerce Business Intelligence Platform
-**
+**E-commerce Business Intelligence Platform**
 
 
 \ 📊 **Project Overview**
@@ -25,64 +24,64 @@ End-to-end data analytics solution for e-commerce business intelligence, featuri
 \ 📁 **Project Structure**
 ecommerce\_project/
 
-├── phase1\_data\_collection.py # Data generation \& pipeline
+├── phase1\_data\_collection.py (Data generation \& pipeline)
 
-├── phase2\_sql\_analysis.py # Business intelligence queries
+├── phase2\_sql\_analysis.py  (Business intelligence queries)
 
-├── phase3\_dashboard.py # Data visualization
+├── phase3\_dashboard.py (Data visualization)
 
-├── create\_database.py # Database setup
+├── create\_database.py  (Database setup)
 
-├── project\_summary.py # Resume metrics generator
+├── project\_summary.py  (Resume metrics generator)
 
-├── README.md # Project documentation
+├── README.md (Project documentation)
 
 └── data/
 
-├── ecommerce.db # SQL database
+├── ecommerce.db  (SQL database)
 
-├── ecommerce\_data.csv # Raw transaction data
+├── ecommerce\_data.csv  (Raw transaction data)
 
-├── ecommerce\_dashboard.png # Visual dashboard
+├── ecommerce\_dashboard.png  (Visual dashboard)
 
-└── business\_metrics.csv # Key performance indicators
+└── business\_metrics.csv  (Key performance indicators)
 
 
 
 \ **Technologies Used**
 
-\- \*\*Python\*\* (Pandas, Matplotlib, SQLite3)
+\- \ **Python** (Pandas, Matplotlib, SQLite3)
 
-\- \*\*SQL\*\* (Complex queries, aggregations, window functions)
+\- \ **SQL** (Complex queries, aggregations, window functions)
 
-\- \*\*Data Visualization\*\* (Matplotlib, professional styling)
+\- \ **Data Visualization** (Matplotlib, professional styling)
 
-\- \*\*Database Management\*\* (SQLite, schema design)
+\- \ **Database Management** (SQLite, schema design)
 
 
 
 \ **How to Run**
 
-1\. \*\*Setup\*\*: `pip install pandas matplotlib numpy`
+1\. \ **Setup**: `pip install pandas matplotlib numpy`
 
-2\. \*\*Phase 1\*\*: `python phase1\_data\_collection.py` (Data generation)
+2\. \ **Phase 1**: `python phase1\_data\_collection.py` (Data generation)
 
-3\. \*\*Phase 2\*\*: `python phase2\_sql\_analysis.py` (SQL analysis)
+3\. \ **Phase 2**: `python phase2\_sql\_analysis.py` (SQL analysis)
 
-4\. \*\*Phase 3\*\*: `python phase3\_dashboard.py` (Visualization)
+4\. \ **Phase 3**: `python phase3\_dashboard.py` (Visualization)
 
-5\. \*\*Summary\*\*: `python project\_summary.py` (Resume metrics)
+5\. \ **Summary**: `python project\_summary.py` (Resume metrics)
 
 
 
 \ 📊 **Sample Output**
 
-!\[Dashboard](data/ecommerce\_dashboard.png)
+\ [Dashboard](data/ecommerce\_dashboard.png)
 
 \  Quick Demo
 **[View Beautiful Dashboard](beautiful_dashboard.html)** - Opens instantly in any browser!
 
-\ ** Skills Demonstrated**
+\ **Skills Demonstrated**
 
 \- Data Engineering (ETL pipelines)
 
