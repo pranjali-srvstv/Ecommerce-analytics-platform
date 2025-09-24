@@ -50,27 +50,27 @@ ecommerce\_project/
 
  **Technologies Used**
 
-\- \ **Python** (Pandas, Matplotlib, SQLite3)
+- **Python** (Pandas, Matplotlib, SQLite3)
 
-\- \ **SQL** (Complex queries, aggregations, window functions)
+- **SQL** (Complex queries, aggregations, window functions)
 
-\- \ **Data Visualization** (Matplotlib, professional styling)
+- **Data Visualization** (Matplotlib, professional styling)
 
-\- \ **Database Management** (SQLite, schema design)
+- **Database Management** (SQLite, schema design)
 
 
 
  **How to Run**
 
-1\. \ **Setup**: `pip install pandas matplotlib numpy`
+1\.  **Setup**: `pip install pandas matplotlib numpy`
 
-2\. \ **Phase 1**: `python phase1\_data\_collection.py` (Data generation)
+2\.  **Phase 1**: `python phase1\_data\_collection.py` (Data generation)
 
-3\. \ **Phase 2**: `python phase2\_sql\_analysis.py` (SQL analysis)
+3\.  **Phase 2**: `python phase2\_sql\_analysis.py` (SQL analysis)
 
-4\. \ **Phase 3**: `python phase3\_dashboard.py` (Visualization)
+4\.  **Phase 3**: `python phase3\_dashboard.py` (Visualization)
 
-5\. \ **Summary**: `python project\_summary.py` (Resume metrics)
+5\.  **Summary**: `python project\_summary.py` (Resume metrics)
 
 
 
@@ -81,17 +81,17 @@ ecommerce\_project/
   Quick Demo
 **[View Beautiful Dashboard](beautiful_dashboard.html)** - Opens instantly in any browser!
 
-\ **Skills Demonstrated**
+ **Skills Demonstrated**
 
-\- Data Engineering (ETL pipelines)
+- Data Engineering (ETL pipelines)
 
-\- SQL \& Database Management
+- SQL \& Database Management
 
-\- Business Intelligence
+- Business Intelligence
 
-\- Data Visualization
+- Data Visualization
 
-\- Statistical Analysis
+- Statistical Analysis
 
-\- Python Programming
+- Python Programming
 
