@@ -2,7 +2,7 @@
 
 
 
-\* 📊 Project Overview*
+\*📊 Project Overview*
 
 End-to-end data analytics solution for e-commerce business intelligence, featuring data pipeline development, SQL analysis, and interactive dashboard visualization.
 
