@@ -1,14 +1,14 @@
-\ E-commerce Business Intelligence Platform
+ E-commerce Business Intelligence Platform
 
 
 
-\** 📊 Project Overview
+\* 📊 Project Overview*
 
 End-to-end data analytics solution for e-commerce business intelligence, featuring data pipeline development, SQL analysis, and interactive dashboard visualization.
 
 
 
-\** 🚀 Features
+\ * Features*
 
 \- \*\*Data Pipeline\*\*: Automated data collection and SQL database management
 
@@ -22,7 +22,7 @@ End-to-end data analytics solution for e-commerce business intelligence, featuri
 
 
 
-\## 📁 Project Structure
+\ *📁 Project Structure*
 ecommerce\_project/
 
 ├── phase1\_data\_collection.py # Data generation \& pipeline
@@ -49,7 +49,7 @@ ecommerce\_project/
 
 
 
-\## 🛠️ Technologies Used
+\ *Technologies Used*
 
 \- \*\*Python\*\* (Pandas, Matplotlib, SQLite3)
 
@@ -61,7 +61,7 @@ ecommerce\_project/
 
 
 
-\## 🚀 How to Run
+\ *How to Run*
 
 1\. \*\*Setup\*\*: `pip install pandas matplotlib numpy`
 
@@ -75,14 +75,14 @@ ecommerce\_project/
 
 
 
-\## 📊 Sample Output
+\ *📊 Sample Output*
 
 !\[Dashboard](data/ecommerce\_dashboard.png)
 
-\## 🎯 Quick Demo
+\  *Quick Demo*
 **[View Beautiful Dashboard](beautiful_dashboard.html)** - Opens instantly in any browser!
 
-\## 👨‍💻 Skills Demonstrated
+\ *👨‍💻 Skills Demonstrated*
 
 \- Data Engineering (ETL pipelines)
 
